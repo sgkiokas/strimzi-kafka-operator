@@ -44,6 +44,7 @@ Strimzi is licensed under the [Apache License, Version 2.0](https://github.com/s
 ## Prerequisites
 
 - Kubernetes 1.11+
+- Helm 2+
 
 ## Installing the Chart
 

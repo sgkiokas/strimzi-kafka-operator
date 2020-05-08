@@ -26,8 +26,15 @@ function install_helm {
     HELM_INSTALL_DIR=/usr/bin
     curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
     chmod 700 get_helm.sh
-    sudo ./get_helm.sh --version ${TEST_HELM_VERSION}
-    helm init --client-only
+
+    sudo ./get_helm.sh --version ${TEST_HELM2_VERSION}
+    mv /usr/local/bin/helm /usr/local/bin/helm2
+
+    sudo ./get_helm.sh --version ${TEST_HELM3_VERSION}
+    mv /usr/local/bin/helm /usr/local/bin/helm3
+
+    # Tiller is not used on Helm 3
+    helm2 init --client-only
 }
 
 function wait_for_minikube {

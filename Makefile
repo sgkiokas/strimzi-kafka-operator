@@ -4,7 +4,8 @@ include ./Makefile.os
 
 GITHUB_VERSION ?= master
 RELEASE_VERSION ?= latest
-CHART_PATH ?= ./helm-charts/strimzi-kafka-operator/
+HELM_VERSION ?= helm3
+CHART_PATH ?= ./helm-charts/$(HELM_VERSION)/strimzi-kafka-operator/
 CHART_SEMANTIC_RELEASE_VERSION ?= $(shell cat ./release.version | tr A-Z a-z)
 BRIDGE_VERSION ?= $(shell cat ./bridge.version | tr A-Z a-z)
 DOCKER_CMD ?= docker
